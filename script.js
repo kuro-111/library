@@ -15,7 +15,13 @@ const merriam = new Book("Merriam's Webster Dictionary", "Noah Webster jr.", "42
 merriam.info();
 
 console.log(this.Book);
+console.log(Book)
 
-function addBooktoLibrary(Book) {
-
+/**
+ * Takes in a new created book, and adds it to the library array.
+ * @param {object} book - Newly created Book (constructor) object
+ * @return {undefined} - Doesn't return anything
+ */
+function addBooktoLibrary(book) {
+    const book = Book
 }
