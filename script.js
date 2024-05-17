@@ -23,5 +23,18 @@ console.log(Book)
  * @return {undefined} - Doesn't return anything
  */
 function addBooktoLibrary(book) {
-    const book = Book
+   library.push(book);
+   return;
 }
+
+addBooktoLibrary(merriam);
+
+console.log(library);
+
+/*
+    PLANS FOR NEXT TIME:
+    - Make form
+    - Make function to take in user form
+    - Make function to display library 
+    - optional make user have a button displaying specific book info
+*/
