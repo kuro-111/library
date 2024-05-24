@@ -7,8 +7,44 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 class="welcome">"Welcome to the Library!"</h1>
     <form>
-        
+        <legend>Register your book: </legend>
+
+        <fieldset>
+           <div class="block">
+            <label for="title">Title: </label>
+            <input
+            type="text"
+            id="book_title"
+            placeholder="Book title here"
+            />
+           </div>
+
+           <div class="block">
+            <label for="author">Author: </label>
+            <input 
+            type="text"
+            id="book_author"
+            placeholder="Book author here"
+            />
+            </div>
+
+            <div class="block">
+            <label for="pagenum">Total page number: </label>
+            <input 
+            type="number"
+            id="pagenum"
+            placeholder="Book page number here"
+            />
+            </div>
+
+            <div class="block">
+            <label for="read_book">Have you read this book?</label>
+            <input type="radio">
+            </div>
+
+        </fieldset>
     </form>
     
 </body>

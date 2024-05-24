@@ -33,7 +33,7 @@ console.log(library);
 
 /*
     PLANS FOR NEXT TIME:
-    - Make form
+    - complete making the form
     - Make function to take in user form
     - Make function to display library 
     - optional make user have a button displaying specific book info
