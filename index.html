@@ -13,7 +13,7 @@
 
         <fieldset>
            <div class="block">
-            <label for="title">Title: </label>
+            <label for="book_title">Title: </label>
             <input
             type="text"
             id="book_title"
@@ -22,7 +22,7 @@
            </div>
 
            <div class="block">
-            <label for="author">Author: </label>
+            <label for="book_author">Author: </label>
             <input 
             type="text"
             id="book_author"
@@ -35,15 +35,22 @@
             <input 
             type="number"
             id="pagenum"
+            name="pages"
             placeholder="Book page number here"
             />
             </div>
 
-            <div class="block">
-            <label for="read_book">Have you read this book?</label>
-            <input type="radio">
+            <br><div class="block">
+                <legend>Have you read this book?</legend>
+                <input type="radio" id="read_book_true" name="read" value="True">
+                <label for="read_book_true">Yes </label>
+                <input type="radio" id="read_book_false" name="read" value="False">
+                <label for="read_book_false">No </label>
             </div>
 
+            <div class="block">
+                <input type="submit" value="Submit">
+            </div>
         </fieldset>
     </form>
     
