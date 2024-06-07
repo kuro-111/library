@@ -1,6 +1,8 @@
 const library = [];
 const bookForm = document.querySelector("#bookform")
 
+let displayLibrary = document.querySelector('.library');
+
 
 
 function Book(title, author, pageTotal, readBook) {
@@ -9,10 +11,9 @@ function Book(title, author, pageTotal, readBook) {
     this.pageTotal = pageTotal;
     this.readBook = readBook; 
     this.info = function() {
-        console.log(`${this.title}, ${this.author}, ${this.pageTotal}, ${this.readBook}`);
+        return `${this.title}, ${this.author}, ${this.pageTotal}, ${this.readBook}`;
     }
 }
-
 
 const merriam = new Book("Merriam's Webster Dictionary", "Noah Webster jr.", "42069", true);
 
@@ -34,7 +35,18 @@ function addBooktoLibrary(book) {
 
 addBooktoLibrary(merriam);
 
-console.log(library);
+
+function displayLibraryObjects(){
+    // Access the library
+
+    // merriam
+    library.forEach((books) => {
+        const bookString = books.info();
+        displayLibrary.setAttribute("style", "color: sky blue; background: white");
+        console.log(bookString);
+    })
+}
+
 
 
 bookForm.addEventListener("submit", (e) => {
@@ -43,9 +55,24 @@ bookForm.addEventListener("submit", (e) => {
     let title = document.querySelector("#book_title");
     let author = document.querySelector("#book_author");
     let pageTotal = document.querySelector("#pagenum");
-    let readBook = document.querySelector('input[name="read"]:checked')
+    let readBookradio = document.querySelector('input[name="read"]:checked');
+    readBook =readBookradio.value;
+    console.log(readBook);
+
+   let newBook = new Book(title,author,pageTotal,readBook);
+
+   addBooktoLibrary(newBook);
+   console.log(library);
+  
+  //*Library is not taking the actual inputs from user-fix it
+    if (library.length>1) {
+        displayLibrary.textContent = "Your Library: "
+        displayLibraryObjects(library);
+    }
 
 });
+
+
 /*
     PLANS FOR NEXT TIME:
     - complete making the form DONE
