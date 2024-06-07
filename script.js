@@ -42,7 +42,8 @@ function displayLibraryObjects(){
     // merriam
     library.forEach((books) => {
         const bookString = books.info();
-        displayLibrary.setAttribute("style", "color: sky blue; background: white");
+        displayLibrary.textContent = bookString;
+        displayLibrary.setAttribute("style", "font: 5rem; color: sky blue; background: pink");
         console.log(bookString);
     })
 }
@@ -52,21 +53,26 @@ function displayLibraryObjects(){
 bookForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    let title = document.querySelector("#book_title");
-    let author = document.querySelector("#book_author");
-    let pageTotal = document.querySelector("#pagenum");
+    let getTitle = document.querySelector("#book_title");
+    let getAuthor = document.querySelector("#book_author");
+    let getPageTotal = document.querySelector("#pagenum");
     let readBookradio = document.querySelector('input[name="read"]:checked');
-    readBook =readBookradio.value;
+    let readBook = readBookradio.value;
+    let title = getTitle.value;
+    let author = getAuthor.value;
+    let pageTotal = getPageTotal.value;
+
     console.log(readBook);
 
    let newBook = new Book(title,author,pageTotal,readBook);
 
-   addBooktoLibrary(newBook);
+   let newLibrary = addBooktoLibrary(newBook);
+
+   newLibrary = library;
    console.log(library);
   
-  //*Library is not taking the actual inputs from user-fix it
     if (library.length>1) {
-        displayLibrary.textContent = "Your Library: "
+        displayLibrary.textContent = "Your Library: ";
         displayLibraryObjects(library);
     }
 
