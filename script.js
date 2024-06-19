@@ -22,6 +22,7 @@ merriam.info();
 console.log(this.Book);
 console.log(Book)
 
+
 /**
  * Takes in a new created book, and adds it to the library array.
  * @param {object} book - Newly created Book (constructor) object
@@ -32,19 +33,25 @@ function addBooktoLibrary(book) {
    return;
 }
 
-
 addBooktoLibrary(merriam);
-
 
 function displayLibraryObjects(){
     // Access the library
 
     // merriam
-    library.forEach((books) => {
-        const bookString = books.info();
+    library.forEach((book) => {
+        // loop 0, book merriam
+        // displayLibrary, change the text to book 0 (merriam)
+
+        // loop 1 - whatever book we add
+        // displayLibrary, change the text to book 1 (new book)
+
+        // Potential fix? Instead of changing text of displayLibrary, add new things to it (book element)
+        const bookString = book.info();
         displayLibrary.textContent = bookString;
         displayLibrary.setAttribute("style", "font: 5rem; color: sky blue; background: pink");
         console.log(bookString);
+        console.log(library);
     })
 }
 
@@ -70,13 +77,17 @@ bookForm.addEventListener("submit", (e) => {
 
    newLibrary = library;
    console.log(library);
-  
-    if (library.length>1) {
-        displayLibrary.textContent = "Your Library: ";
-        displayLibraryObjects(library);
-    }
+
+
+   if (library.length>1) {
+    displayLibrary.textContent = "Your Library: ";
+    displayLibraryObjects(library);
+}
+
 
 });
+
+
 
 
 /*
