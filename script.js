@@ -47,9 +47,10 @@ function displayLibraryObjects(){
         // displayLibrary, change the text to book 1 (new book)
 
         // Potential fix? Instead of changing text of displayLibrary, add new things to it (book element)
+        // add element instead of class
         const bookString = book.info();
+        displayLibrary.classList.add("show");
         displayLibrary.textContent = bookString;
-        displayLibrary.setAttribute("style", "font: 5rem; color: sky blue; background: pink");
         console.log(bookString);
         console.log(library);
     })
