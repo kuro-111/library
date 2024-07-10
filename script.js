@@ -49,8 +49,12 @@ function displayLibraryObjects(){
         // Potential fix? Instead of changing text of displayLibrary, add new things to it (book element)
         // add element instead of class
         const bookString = book.info();
-        displayLibrary.classList.add("show");
-        displayLibrary.textContent = bookString;
+
+        const newDiv = document.createElement("book_div");
+        newDiv.textContent = bookString;
+        //find out why textContent not working;
+        displayLibrary.appendChild(newDiv);
+        //add formatting for text
         console.log(bookString);
         console.log(library);
     })
