@@ -49,14 +49,20 @@ function displayLibraryObjects(){
         // Potential fix? Instead of changing text of displayLibrary, add new things to it (book element)
         // add element instead of class
         const bookString = book.info();
-
+        // JS <- HTML -> CSS
+        /*
+            1. Attach styles manually JS (newDiv.style.height = "10rem" | newDiv.style.backgroundColor)
+            2. BETTER: Attach a class to the new element, style it in CSS - JS (newDiv.classList.add("library-card"))
+              - CSS (style.css) .library-card { background-color: blue }
+              - IS BEST because we can write lots of css in the stylesheet, without messying our JS CODE.
+        */
         const newDiv = document.createElement("book_div");
         newDiv.textContent = bookString;
-        //find out why textContent not working;
         displayLibrary.appendChild(newDiv);
         //add formatting for text
         console.log(bookString);
         console.log(library);
+        newDiv.classList.add('library-card');
     })
 }
 
@@ -92,6 +98,7 @@ bookForm.addEventListener("submit", (e) => {
 
 });
 
+//Proceed to step 5 of the Odin project assignment
 
 
 

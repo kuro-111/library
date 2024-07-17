@@ -1,0 +1,9 @@
+.library-card {
+    display: flex;
+    width: 12rem;
+    height: 4rem;
+    background-color: #096161;
+    color: beige;
+    font-size: 17px;
+    padding: 1rem;
+}
