@@ -1,9 +1,18 @@
 .library-card {
     display: flex;
-    width: 12rem;
+    width: 12.5rem;
     height: 4rem;
     background-color: #096161;
     color: beige;
     font-size: 17px;
     padding: 1rem;
+    margin-right: 1.4rem;
+}
+
+button {
+    display: flex;
+    align-self: flex-start;
+    width: 2rem;
+    height: 1.4rem;
+    margin-left: 1rem;
 }

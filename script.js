@@ -40,22 +40,7 @@ function displayLibraryObjects(){
 
     // merriam
     library.forEach((book) => {
-        // loop 0, book merriam
-        // displayLibrary, change the text to book 0 (merriam)
-
-        // loop 1 - whatever book we add
-        // displayLibrary, change the text to book 1 (new book)
-
-        // Potential fix? Instead of changing text of displayLibrary, add new things to it (book element)
-        // add element instead of class
         const bookString = book.info();
-        // JS <- HTML -> CSS
-        /*
-            1. Attach styles manually JS (newDiv.style.height = "10rem" | newDiv.style.backgroundColor)
-            2. BETTER: Attach a class to the new element, style it in CSS - JS (newDiv.classList.add("library-card"))
-              - CSS (style.css) .library-card { background-color: blue }
-              - IS BEST because we can write lots of css in the stylesheet, without messying our JS CODE.
-        */
         const newDiv = document.createElement("book_div");
         newDiv.textContent = bookString;
         displayLibrary.appendChild(newDiv);
@@ -63,8 +48,16 @@ function displayLibraryObjects(){
         console.log(bookString);
         console.log(library);
         newDiv.classList.add('library-card');
+        const removeB = document.createElement("button");
+        removeB.textContent = "X";
+        newDiv.appendChild(removeB);
+
+        //add eventlistener for the remove button
     })
 }
+
+
+
 
 
 
