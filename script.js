@@ -39,24 +39,42 @@ function displayLibraryObjects(){
     // Access the library
 
     // merriam
-    library.forEach((book) => {
+    library.forEach((book, i) => {
+        book.index = i;
+
         const bookString = book.info();
         const newDiv = document.createElement("book_div");
+        newDiv.setAttribute("data-set", i);
         newDiv.textContent = bookString;
         displayLibrary.appendChild(newDiv);
         //add formatting for text
-        console.log(bookString);
+        
         console.log(library);
         newDiv.classList.add('library-card');
         const removeB = document.createElement("button");
         removeB.textContent = "X";
         newDiv.appendChild(removeB);
+        console.log(newDiv);
+        removeB.addEventListener("click", (removeBooks));
 
         //add eventlistener for the remove button
     })
 }
 
 
+function removeBooks(e){
+    const pageBook = e.target.parentNode;
+     //const libraryBook = 
+
+    /*
+        1) Find book
+          - Find book on page (newDiv) x
+          - Find book in library (get data attribute compare index to library array)
+          - Compare them
+          - See if equal
+          - If equal, remove from both page and library
+    */
+}
 
 
 
