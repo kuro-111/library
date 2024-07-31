@@ -1,12 +1,14 @@
 .library-card {
     display: flex;
     width: 12.5rem;
-    height: 4rem;
+    height: 4.2rem;
     background-color: #096161;
     color: beige;
     font-size: 17px;
     padding: 1rem;
+    padding-bottom: 1rem;
     margin-right: 1.4rem;
+    margin-bottom: .2rem;
 }
 
 button {

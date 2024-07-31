@@ -40,8 +40,6 @@ function displayLibraryObjects(){
 
     // merriam
     library.forEach((book, i) => {
-        book.index = i;
-
         const bookString = book.info();
         const newDiv = document.createElement("book_div");
         newDiv.setAttribute("data-set", i);
@@ -64,19 +62,28 @@ function displayLibraryObjects(){
 
 function removeBooks(e){
     const pageBook = e.target.parentNode;
-     //const libraryBook = 
+    const bookIndex = pageBook.getAttribute('data-set');
+    console.log(bookIndex);
+     const libraryBook = library[bookIndex];
+     console.log(libraryBook);
+                        
+     library.splice(bookIndex, 1);
+
+     console.log(library);
+
+     pageBook.remove();
 
     /*
         1) Find book
           - Find book on page (newDiv) x
-          - Find book in library (get data attribute compare index to library array)
+          - Find book in library (get data attribute compare index to library array) x
           - Compare them
           - See if equal
           - If equal, remove from both page and library
     */
 }
 
-
+//add function to edit read status
 
 
 bookForm.addEventListener("submit", (e) => {
