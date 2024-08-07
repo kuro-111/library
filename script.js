@@ -50,10 +50,22 @@ function displayLibraryObjects(){
         console.log(library);
         newDiv.classList.add('library-card');
         const removeB = document.createElement("button");
+        removeB.className = "delete";
         removeB.textContent = "X";
         newDiv.appendChild(removeB);
         console.log(newDiv);
         removeB.addEventListener("click", (removeBooks));
+
+       const editB =document.createElement("button");
+       editB.className = "edit";
+       editB.textContent = "Edit";
+       newDiv.appendChild(editB);
+       console.log(newDiv);
+       editB.addEventListener("click", ()=> {
+            console.log("I am here.")
+       });
+
+
 
         //add eventlistener for the remove button
     })
@@ -83,7 +95,15 @@ function removeBooks(e){
     */
 }
 
-//add function to edit read status
+
+
+function editRead (e) {
+    const editForm = document.createElement("input");
+    editForm.setAttribute("type", "radio");
+
+}
+
+//edit/complete function for editing read status
 
 
 bookForm.addEventListener("submit", (e) => {

@@ -4,17 +4,27 @@
     height: 4.2rem;
     background-color: #096161;
     color: beige;
-    font-size: 17px;
-    padding: 1rem;
+    font-size: 15px;
+    padding:.5rem;
     padding-bottom: 1rem;
     margin-right: 1.4rem;
     margin-bottom: .2rem;
 }
 
-button {
+.delete {
     display: flex;
     align-self: flex-start;
+    color: red;
     width: 2rem;
     height: 1.4rem;
-    margin-left: 1rem;
+    margin-left: 1.3rem;
+}
+
+.edit {
+    display: flex;
+    align-self: flex-end;
+    width: 2rem;
+    background-color: transparent;
+    border: none;
+    color: rgb(87, 199, 214);
 }
