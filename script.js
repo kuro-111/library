@@ -11,7 +11,8 @@ function Book(title, author, pageTotal, readBook) {
     this.pageTotal = pageTotal;
     this.readBook = readBook; 
     this.info = function() {
-        return `${this.title}, ${this.author}, ${this.pageTotal}, ${this.readBook}`;
+        console.log(this.readBook);
+        return `${this.title}, ${this.author}, ${this.pageTotal}, ${this.readBook ? "Read": "Unread"}`;
     }
 }
 
@@ -36,9 +37,7 @@ function addBooktoLibrary(book) {
 addBooktoLibrary(merriam);
 
 function displayLibraryObjects(){
-    // Access the library
-
-    // merriam
+   
     library.forEach((book, i) => {
         const bookString = book.info();
         const newDiv = document.createElement("book_div");
@@ -56,14 +55,22 @@ function displayLibraryObjects(){
         console.log(newDiv);
         removeB.addEventListener("click", (removeBooks));
 
-       const editB =document.createElement("button");
-       editB.className = "edit";
-       editB.textContent = "Edit";
-       newDiv.appendChild(editB);
-       console.log(newDiv);
-       editB.addEventListener("click", ()=> {
+        const editBLabel = document.createElement("label");
+        editBLabel.textContent = "Read";
+        editBLabel.className = "edit_label";
+        const editCB = document.createElement("input");
+        editCB.setAttribute("type", "checkbox");
+        editCB.className = "edit";
+        // editB.value = "Radio buttons";
+        newDiv.appendChild(editBLabel);
+        newDiv.appendChild(editCB);
+        console.log(newDiv);
+
+        editCB.checked = book.readBook == true ?  true :  false;
+
+        editCB.addEventListener("click", ()=> {
             console.log("I am here.")
-       });
+        });
 
 
 
@@ -98,8 +105,7 @@ function removeBooks(e){
 
 
 function editRead (e) {
-    const editForm = document.createElement("input");
-    editForm.setAttribute("type", "radio");
+   
 
 }
 
@@ -120,12 +126,14 @@ bookForm.addEventListener("submit", (e) => {
 
     console.log(readBook);
 
-   let newBook = new Book(title,author,pageTotal,readBook);
+    readBook = readBook == "True" ? true : false;
 
-   let newLibrary = addBooktoLibrary(newBook);
+    let newBook = new Book(title,author,pageTotal,readBook);
 
-   newLibrary = library;
-   console.log(library);
+    let newLibrary = addBooktoLibrary(newBook);
+
+    newLibrary = library;
+    console.log(library);
 
 
    if (library.length>1) {

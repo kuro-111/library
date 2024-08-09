@@ -28,3 +28,9 @@
     border: none;
     color: rgb(87, 199, 214);
 }
+
+.edit_label {
+    display: flex;
+    align-self: flex-end;
+    color: rgb(145, 242, 255);
+}
