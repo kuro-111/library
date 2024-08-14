@@ -68,8 +68,14 @@ function displayLibraryObjects(){
 
         editCB.checked = book.readBook == true ?  true :  false;
 
-        editCB.addEventListener("click", ()=> {
-            console.log("I am here.")
+        editCB.addEventListener("click", (e, book) => {
+            if (editCB.checked == true) {
+                editCB.checked = false;
+                book.readBook = false;
+            }else {
+                editCB.checked = true;
+                book.readBook = true;
+            }
         });
 
 
@@ -104,9 +110,8 @@ function removeBooks(e){
 
 
 
-function editRead (e) {
-   
-
+function editRead (e,book) {
+    
 }
 
 //edit/complete function for editing read status
